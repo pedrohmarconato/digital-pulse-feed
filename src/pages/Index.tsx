@@ -12,6 +12,7 @@ import { useAiSummary } from '@/hooks/useAiSummary';
 import { mockNewsItems } from '@/lib/data';
 import { Language } from '@/lib/types';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Calendar, Sparkles } from 'lucide-react';
 
 const Index = () => {
   const { selectedTopic, selectTopic } = useTopics('all');
@@ -28,9 +29,9 @@ const Index = () => {
     { locale: currentLanguage === 'en' ? enUS : ptBR }
   );
   
-  const pageTitle = currentLanguage === 'en' 
-    ? `Latest Marketing, CRM & Business Insights - ${currentDate}` 
-    : `Últimas Novidades em Marketing, CRM e Negócios - ${currentDate}`;
+  const summaryTitle = currentLanguage === 'en'
+    ? "AI Pulse"
+    : "IA Pulse";
     
   const pageSubtitle = currentLanguage === 'en'
     ? 'Stay informed with the latest trends, research, and professional insights'
@@ -38,27 +39,38 @@ const Index = () => {
   
   return (
     <MainLayout>
-      <div className="flex flex-col-reverse md:flex-row md:items-center justify-between mb-6">
-        <div className="md:mr-4">
-          <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">{pageTitle}</h1>
-          <p className="text-muted-foreground mb-4">{pageSubtitle}</p>
+      <div className="mb-6">
+        <p className="text-muted-foreground mb-4">{pageSubtitle}</p>
+        
+        <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+          <div className="w-full md:w-3/4">
+            {isLoading ? (
+              <div className="space-y-2">
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-[90%]" />
+              </div>
+            ) : (
+              <div className="bg-primary/5 p-4 rounded-md border border-primary/10">
+                <div className="flex items-center gap-2 mb-2">
+                  <Sparkles className="h-4 w-4 text-primary" />
+                  <h2 className="text-sm font-medium text-primary">{summaryTitle}</h2>
+                </div>
+                <p className="text-sm leading-relaxed">{summary}</p>
+              </div>
+            )}
+          </div>
           
-          {isLoading ? (
-            <div className="space-y-2">
-              <Skeleton className="h-4 w-full" />
-              <Skeleton className="h-4 w-[90%]" />
+          <div className="flex flex-row md:flex-col items-center gap-2">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Calendar className="h-4 w-4" />
+              <span className="text-sm font-medium">{currentDate}</span>
             </div>
-          ) : (
-            <div className="bg-primary/5 p-4 rounded-md border border-primary/10 mb-4">
-              <p className="text-sm leading-relaxed">{summary}</p>
-            </div>
-          )}
+            <LanguageToggle 
+              currentLanguage={currentLanguage} 
+              onToggle={toggleLanguage}
+            />
+          </div>
         </div>
-        <LanguageToggle 
-          currentLanguage={currentLanguage} 
-          onToggle={toggleLanguage}
-          className="mb-4 md:mb-0"
-        />
       </div>
       
       <div className="mb-8">
