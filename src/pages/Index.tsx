@@ -32,16 +32,10 @@ const Index = () => {
   const summaryTitle = currentLanguage === 'en'
     ? "AI Pulse"
     : "IA Pulse";
-    
-  const pageSubtitle = currentLanguage === 'en'
-    ? 'Stay informed with the latest trends, research, and professional insights'
-    : 'Mantenha-se informado com as últimas tendências, pesquisas e insights profissionais';
-  
+
   return (
     <MainLayout>
       <div className="mb-6">
-        <p className="text-muted-foreground mb-4">{pageSubtitle}</p>
-        
         <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-4 mb-6">
           <div className="w-full md:w-3/4">
             {isLoading ? (
