@@ -1,5 +1,4 @@
-
-import { NewsItem, Topic } from './types';
+import { NewsItem, Topic, Influencer, Blog } from './types';
 
 export const TOPICS: { id: Topic; label: { en: string; pt: string } }[] = [
   { id: 'all', label: { en: 'All', pt: 'Todos' } },
@@ -8,6 +7,208 @@ export const TOPICS: { id: Topic; label: { en: string; pt: string } }[] = [
   { id: 'business', label: { en: 'Business', pt: 'Negócios' } },
   { id: 'data-analytics', label: { en: 'Data Analytics', pt: 'Análise de Dados' } },
   { id: 'social-media', label: { en: 'Social Media', pt: 'Mídias Sociais' } },
+];
+
+export const INFLUENCERS: Influencer[] = [
+  // International Influencers - LinkedIn
+  {
+    id: 'neil-patel',
+    name: 'Neil Patel',
+    title: 'Digital Marketing Expert, Co-founder of NP Digital',
+    bio: 'Especialista em marketing digital e cofundador da NP Digital, Neil compartilha insights sobre SEO, marketing de conteúdo e estratégias de crescimento.',
+    platforms: {
+      linkedin: '#',
+      twitter: '#'
+    },
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['marketing', 'data-analytics', 'social-media']
+  },
+  {
+    id: 'ann-handley',
+    name: 'Ann Handley',
+    title: 'Chief Content Officer at MarketingProfs',
+    bio: 'Diretora de Conteúdo da MarketingProfs e autora renomada, Ann é referência em marketing de conteúdo e storytelling.',
+    platforms: {
+      linkedin: '#',
+      twitter: '#'
+    },
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['marketing', 'social-media']
+  },
+  {
+    id: 'rand-fishkin',
+    name: 'Rand Fishkin',
+    title: 'Co-founder of Moz and SparkToro',
+    bio: 'Cofundador da Moz e da SparkToro, Rand é especialista em SEO e marketing digital, compartilhando análises e tendências do setor.',
+    platforms: {
+      linkedin: '#',
+      twitter: '#'
+    },
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['marketing', 'data-analytics']
+  },
+  {
+    id: 'jill-konrath',
+    name: 'Jill Konrath',
+    title: 'B2B Sales Consultant and Author',
+    bio: 'Autora e consultora em vendas B2B, Jill é conhecida por seu trabalho em estratégias de vendas e uso eficaz do LinkedIn para negócios.',
+    platforms: {
+      linkedin: '#',
+      twitter: '#'
+    },
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['business', 'crm']
+  },
+  {
+    id: 'paul-greenberg',
+    name: 'Paul Greenberg',
+    title: 'Author of "CRM at the Speed of Light"',
+    bio: 'Autor de "CRM at the Speed of Light" e analista influente em CRM e experiência do cliente.',
+    platforms: {
+      linkedin: '#',
+      twitter: '#'
+    },
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['crm', 'business']
+  },
+  
+  // Brazilian Influencers - LinkedIn
+  {
+    id: 'ricardo-amorim',
+    name: 'Ricardo Amorim',
+    title: 'Economista e Influenciador',
+    bio: 'Economista e influenciador mais seguido do LinkedIn na América Latina, compartilha análises sobre economia, tecnologia e inovação.',
+    platforms: {
+      linkedin: '#',
+      twitter: '#'
+    },
+    imageUrl: '/placeholder.svg',
+    region: 'brazil',
+    topics: ['business', 'data-analytics']
+  },
+  {
+    id: 'luiza-helena-trajano',
+    name: 'Luiza Helena Trajano',
+    title: 'Presidente do Conselho de Administração do Magazine Luiza',
+    bio: 'Presidente do Conselho de Administração do Magazine Luiza, compartilha sua visão sobre empreendedorismo e gestão.',
+    platforms: {
+      linkedin: '#',
+      twitter: '#'
+    },
+    imageUrl: '/placeholder.svg',
+    region: 'brazil',
+    topics: ['business', 'crm']
+  },
+  {
+    id: 'gustavo-caetano',
+    name: 'Gustavo Caetano',
+    title: 'Fundador da Sambatech',
+    bio: 'Fundador da Sambatech, reconhecido por suas contribuições em inovação e transformação digital.',
+    platforms: {
+      linkedin: '#',
+      twitter: '#'
+    },
+    imageUrl: '/placeholder.svg',
+    region: 'brazil',
+    topics: ['marketing', 'business']
+  },
+  {
+    id: 'sofia-esteves',
+    name: 'Sofia Esteves',
+    title: 'Fundadora do Grupo Cia de Talentos',
+    bio: 'Fundadora do Grupo Cia de Talentos, referência na área de recursos humanos.',
+    platforms: {
+      linkedin: '#',
+      twitter: '#'
+    },
+    imageUrl: '/placeholder.svg',
+    region: 'brazil',
+    topics: ['business', 'crm']
+  },
+  {
+    id: 'camila-farani',
+    name: 'Camila Farani',
+    title: 'Investidora do Shark Tank Brasil',
+    bio: 'Investidora do Shark Tank Brasil, compartilha insights sobre inovação e liderança.',
+    platforms: {
+      linkedin: '#',
+      twitter: '#'
+    },
+    imageUrl: '/placeholder.svg',
+    region: 'brazil',
+    topics: ['business', 'marketing']
+  },
+];
+
+export const BLOGS: Blog[] = [
+  {
+    id: 'hubspot-blog',
+    name: 'HubSpot Blog',
+    description: 'Referência em inbound marketing, vendas e CRM.',
+    url: '#',
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['marketing', 'crm', 'business']
+  },
+  {
+    id: 'neil-patel-blog',
+    name: 'Neil Patel Blog',
+    description: 'Dicas práticas de SEO, marketing de conteúdo e análise de dados.',
+    url: '#',
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['marketing', 'data-analytics']
+  },
+  {
+    id: 'marketing-profs',
+    name: 'MarketingProfs',
+    description: 'Conteúdo voltado para profissionais de marketing B2B.',
+    url: '#',
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['marketing', 'business']
+  },
+  {
+    id: 'moz-blog',
+    name: 'Moz Blog',
+    description: 'Especializado em SEO e marketing de busca.',
+    url: '#',
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['marketing', 'data-analytics']
+  },
+  {
+    id: 'content-marketing-institute',
+    name: 'Content Marketing Institute',
+    description: 'Foco em estratégias de marketing de conteúdo.',
+    url: '#',
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['marketing', 'social-media']
+  },
+  {
+    id: 'kissmetrics-blog',
+    name: 'Kissmetrics Blog',
+    description: 'Análises e métricas para otimização de marketing.',
+    url: '#',
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['marketing', 'data-analytics']
+  },
+  {
+    id: 'buffer-blog',
+    name: 'Buffer Blog',
+    description: 'Dicas sobre redes sociais e marketing digital.',
+    url: '#',
+    imageUrl: '/placeholder.svg',
+    region: 'international',
+    topics: ['marketing', 'social-media']
+  },
 ];
 
 export const mockNewsItems: NewsItem[] = [
@@ -220,4 +421,26 @@ export function getNewsByTopic(topic: Topic) {
 
 export function getNewsByLanguage(language: string) {
   return mockNewsItems.filter(item => item.language === language);
+}
+
+export function getInfluencersByTopic(topic: Topic) {
+  if (topic === 'all') {
+    return INFLUENCERS;
+  }
+  return INFLUENCERS.filter(influencer => influencer.topics.includes(topic));
+}
+
+export function getInfluencersByRegion(region: string) {
+  return INFLUENCERS.filter(influencer => influencer.region === region);
+}
+
+export function getBlogsByTopic(topic: Topic) {
+  if (topic === 'all') {
+    return BLOGS;
+  }
+  return BLOGS.filter(blog => blog.topics.includes(topic));
+}
+
+export function getBlogsByRegion(region: string) {
+  return BLOGS.filter(blog => blog.region === region);
 }

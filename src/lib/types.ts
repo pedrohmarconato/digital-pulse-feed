@@ -13,6 +13,8 @@ export type NewsSource = 'linkedin' | 'academic' | 'blog';
 
 export type Region = 'international' | 'brazil';
 
+export type Platform = 'linkedin' | 'twitter';
+
 export interface EngagementMetrics {
   likes?: number;
   comments?: number;
@@ -41,4 +43,27 @@ export interface NewsItem {
   region: Region;
   engagement: EngagementMetrics;
   imageUrl?: string;
+}
+
+export interface Influencer {
+  id: string;
+  name: string;
+  title: string;
+  bio: string;
+  platforms: {
+    [key in Platform]?: string;
+  };
+  imageUrl: string;
+  region: Region;
+  topics: Topic[];
+}
+
+export interface Blog {
+  id: string;
+  name: string;
+  description: string;
+  url: string;
+  imageUrl: string;
+  region: Region;
+  topics: Topic[];
 }

@@ -6,11 +6,12 @@ import { Language } from '@/lib/types';
 interface LanguageToggleProps {
   currentLanguage: Language;
   onToggle: () => void;
+  className?: string; // Adding className prop
 }
 
-export function LanguageToggle({ currentLanguage, onToggle }: LanguageToggleProps) {
+export function LanguageToggle({ currentLanguage, onToggle, className }: LanguageToggleProps) {
   return (
-    <div className="flex items-center space-x-2">
+    <div className={cn("flex items-center space-x-2", className)}>
       <Button 
         variant="ghost" 
         size="sm"
